@@ -4,7 +4,7 @@ title: Focus AI - Gallery
 include_in_header: true
 ---
 
-# Custom AIs
+# Focus AIs
 For some courses, we've developed Custom Focus AIs in order to best meet the learners' needs. Here you can find the one that is right for you!
 
 ## TU Berlin: [Analysis I und Lineare Algebra für Ingenieure](https://app.sophiaedulabs.com/focusai/ana-tub)
