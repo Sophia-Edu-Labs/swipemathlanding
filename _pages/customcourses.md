@@ -21,7 +21,8 @@ Try it out [here](https://app.sophiaedulabs.com/focusai/ana-tum)!
 
  <!-- ### LMU Munich: [Analysis I (für Informatik und Statistik)](https://app.sophiaedulabs.com/focusai/ana-general)
 And of course, LMU with its campus in the heart of the city also gets a Custom Focus-AI! 🍻
-Try it out [here](https://app.sophiaedulabs.com/focusai/ana-tub)!
+Try it out [here](https://app.sophiaedulabs.com/focusai/ana-tub)! -->
+
 
 <!-- ## ETH Zurich: [Analysis I (fürs Informatik)](https://app.sophiaedulabs.com/focusai/ana-general)
 We're currently based in Switzerland 🇨🇭 and enjoying the ETH ecosystem, so we had to make a custom course for ETH!
