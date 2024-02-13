@@ -1,60 +1,68 @@
 ---
 layout: page
 title: Privacy Policy
-include_in_header: false
+include_in_header: true
 ---
 
-**Last updated**  
-August 1 2019
+‍
 
-# Privacy Policy
-Submissive a when owing much far bawdy thanks impolitely alas overlaid one and this one chuckled darn on more due much misheard amused far far the much purposeful that wildebeest dalmatian and piranha bluebird this and much despite however much sincere nonsensical this paradoxically more.
+## Privacy Policy for the SwipeMath App
 
-**Please note:** This is purely a dummy Privacy Policy that serves as an example for how you can use this app landing page generator. Please replace the contents with your own privacy policy.
+SwipeMath developed by Sophia Edu Labs, is a comprehensive AI-based education app designed to enhance learning through interactive content available via our app, website, and web-app. This Privacy Policy outlines our practices concerning the collection, use, and sharing of your information through our platforms. By accessing or using SwipeMath, you agree to the terms of this Privacy Policy.
 
-<br>
+### Information We Collect
+a. In-App Purchases: If you make in-app purchases, we, through the integration of RevenueCat, collect transaction-related information. This may include purchase history and product interest but excludes direct payment information such as credit card numbers.
+b. Usage Data and Cookies: We use Google Analytics to understand how our app and website are used, collecting data such as pages visited, session durations, and interaction with content. Cookies and similar technologies help us enhance your user experience, tailor content, and improve the security of our services.
+c. Authentication Data: We utilize Firebase Services for user authentication and data storage. This involves collecting data necessary to authenticate and secure your account.
+How We Use Your Information
+a. To Improve Services: The information collected helps us tailor educational content, address technical issues, enhance user experience, and secure our platforms.
+b. Analytics and Performance: We analyze aggregated usage data to understand user behavior patterns, which aids in optimizing our service offerings and content.
 
-## 1.0 Information We Collect
-Far near but lighted walking far oyster hello kneeled flung and roadrunner and more witless narrowly flexed brokenly blandly much in famous jeez obsessive that.
+## Sharing Your Information
 
-### 1.1 Information from third parties
-- Ouch until smirked some some newt that at frustrating.
-- Nimbly handsomely fabulously python.
-- Alas informally taped when a dear some.
+a. Service Providers: Information may be shared with third-party providers, such as Google Analytics and RevenueCat, to facilitate specific services on our behalf, including analytics and payment processing. These providers are bound by confidentiality agreements and are prohibited from using the data for other purposes.
+b. Legal Requirements: We may disclose information if legally required, to protect our rights, or to prevent fraud or other illegal activities.
 
-### 1.2 Information you provide to us 
-Menacingly much walrus far together derisive falcon the toneless unceremoniously yet yikes a hung when because far drooled cast amused naughtily quiet hare a thickly more dogged drank more this dismounted since hence nakedly jeez rolled far gerbil the hey puerilely where vociferously struck insane much twitched instead some beneath then wiped dull snuffed far jeez nightingale bit goodness obscurely quit that much yet nefarious careless some concrete shrewdly gull closed this hugged aboard.
+## Data Security
 
-<br>
+We employ industry-standard measures to protect against unauthorized access, alteration, or destruction of data. However, no internet-based service is completely secure, and we cannot guarantee absolute security.
 
-## 2.0 What Personal Information we collect about you and how we collect it
-Where cut one reproachful alas ambiguous helpful hen raucous editorial underwrote dubiously therefore this boastfully or possessively oh modest amidst some opposite far wasp grew emu snickered some jeepers and circa much that *equitable* foul camel caudally oh opossum far dear met far much close hello beheld facetious far goodness tidily reindeer that kiwi thus crud that paid and by titilatingly hey falcon lemming or well approving sympathetically groundhog mongoose and deeply peaceful wow ouch far regally this and near and badly fatal blunt mischievously and and the blew.
+## Your Rights and Choices
 
-### 2.1 Third Parties we collect information from
-Various remotely save this querulously explicitly one this and far congenially broad grew said or abhorrently haltered darn beheld panther shrank and one goldfish the more away as much different moth.
+Without account creation, our ability to identify or associate data with individual users is limited. However, you can control cookies through your browser settings and opt out of certain analytics and advertising networks by following their provided opt-out procedures.
+Changes to This Privacy Policy
+We reserve the right to update our Privacy Policy. Changes will be communicated by posting the updated policy on our website. Continued use after changes indicates acceptance of the new terms.
+## Contact Us
+For questions or concerns about our privacy practices, please contact us at hello@sophiaedulabs.com.
+‍
 
-| Third Party | What is it used for? |
-| :--- | :--- |
-| Falcon | Tidily reindeer that kiwi thus crud that paid and by titilatingly hey falcon lemming. |
-| Eagle | Juggled crud a however overslept vehemently kept indisputably anteater walked alas or into. |
+‍
 
-<br>
+## Cookies
+We, Sophia Edu Labs, use cookies on our website, accessible at sophiaedulabs.com, to improve your user experience, personalize content and advertisements, analyze our website traffic, and understand where our visitors are coming from. This Cookie Disclaimer outlines our use of cookies and your rights regarding these cookies.
 
-## 3.0 What rights do you, as the data subject, have
-This goodness well well and more cowardly lynx credibly more apart save and less oh examined ouch marginal growled and proper liberally salmon busy some while pointed far because understood.
+## What Are Cookies?
+Cookies are small data files, consisting of text strings, which are stored on your computer or other devices when websites are loaded in a browser. They are widely used to 'remember' you and your preferences, either for a single visit (through a 'session cookie') or for multiple repeat visits (using a 'persistent cookie'). They ensure a consistent and efficient experience for visitors and perform essential functions such as allowing users to register and remain logged in.
 
-1. Boastfully or possessively oh modest amidst.
-2. Far far the much purposeful that wildebeest dalmatian.
-3. Adamant or pushed less far overthrew.
+## How We Use Cookies
+We use both session and persistent cookies on our website. Different types of cookies serve different purposes:
 
-All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+### Essential Cookies:
+These cookies are necessary for the proper function of our website. They enable core functionality such as security, network management, and accessibility. Disabling these cookies may affect the functionality of the website.
+### Performance Cookies:
+These cookies allow us to count visits and traffic sources, so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site.
+### Functionality Cookies:
+These cookies enable the website to provide enhanced functionality and personalization. They may be set by us or by third-party providers whose services we have added to our pages.
 
-<br>
+### Targeting/Advertising Cookies:
+These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant advertisements on other sites.
 
-## 4.0 How we store and secure the Personal Information we collect
-Worm where gravely behind logically far in tastefully as alas delicately before well darn then far the much pulled red-handed circa much much far pangolin spelled much clung dachshund smirked close some the adamant or pushed less far overthrew in moth begrudging warthog newt pragmatic bent darn and far needlessly notwithstanding angrily as celestially horse rebuking magnanimous dear inscrutably jeepers listless before saucy this much however and wolf dear cringed crab a wanton jeepers flatteringly characteristically a atrocious and returned more lemming robin let some crud that more secure nimble where soundly pitiful because bombastic much.
+### Managing Your Cookies
+Most web browsers allow you to control cookies through their settings preferences. However, if you limit the ability of websites to set cookies, you may worsen your overall user experience. Disabling cookies or refusing to accept them may prevent you from using certain parts of our website. It may also cause certain parts of our website to not function properly.
 
-<br>
+### Changes to This Cookie Policy
+We reserve the right to make changes to this Cookie Disclaimer at any time and for any reason. We will notify you about any changes by updating the "Last Updated" date of this Cookie Disclaimer. Any changes or modifications will be effective immediately upon posting the updated Cookie Disclaimer on our website.
 
-## 5.0 Information processing and transfers for EEA individuals
-Cracked a more and iguana a without some echidna a abnormal hello and beat thanks jeepers gnu jeepers until up depending for drooled awfully angelfish relentless much a well wasp some in impala darn and overate greedily wow kookaburra beneath much wistful fluid until and lemming less armadillo redoubtable after much capybara wow that hence interbred timorous loosely oh.
+‍
+
+Last Updated: 07.02.2023
