@@ -18,11 +18,11 @@ Try it out [here](https://app.sophiaedulabs.com/focusai/ana-tub)!
 Of course, we didn't forget our Neighbours in Dahlem 🧸!
 Try it out [here](https://app.sophiaedulabs.com/focusai/ana-fub)!
 
-# TU Munich: [Analysis I (für Informatik)](https://app.sophiaedulabs.com/focusai/ana-tum)
+## TU Munich: [Analysis I (für Informatik)](https://app.sophiaedulabs.com/focusai/ana-tum)
 Growing up in Munich 🥨, TUM is something I've always been proud of. So naturally, there is a Custom Focus-AI for TUM as well!
 Try it out [here](https://app.sophiaedulabs.com/focusai/ana-tum)! 
 
-# Fernuni Hagen: [61111 Mathematische Grundlagen)](https://app.sophiaedulabs.com/focusai/ana-fuh)
+## Fernuni Hagen: [61111 Mathematische Grundlagen)](https://app.sophiaedulabs.com/focusai/ana-fuh)
 I studied Psychology at this wonderful institution for some time and many of the things I learned there, served as the foundation for this app. So naturally, we needed to create a custom course for FUH!
 Try it out [here](https://app.sophiaedulabs.com/focusai/ana-fuh)! 
 
