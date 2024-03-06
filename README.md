@@ -93,7 +93,7 @@ You can also choose not to include these pages, by simple deleting the `privacyp
 
 
 
-
+ 
 ## Feedback
 If you have feedback regarding bugs or improvements, open an issue, @ me on Twitter or write me an email. You can find my contact info on my website.
 
