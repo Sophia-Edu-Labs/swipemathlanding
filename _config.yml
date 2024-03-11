@@ -136,3 +136,5 @@ default_lang: "en"
 exclude_from_localization: ["javascript", "images", "css", "public"]
 parallel_localization: true
 lang_from_path: true
+
+repository: Sophia-Edu-Labs/swipemathlanding
