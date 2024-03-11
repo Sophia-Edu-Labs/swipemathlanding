@@ -18,7 +18,7 @@ app_price:
   de: Kostenlos
 app_description:
   en: Math Exam coming up? Start swiping & Let the AI do the rest
-  de: Matheprüfung steht an? Fang an zu wischen & Lass die KI den Rest erledigen
+  de: Mathe-Abi steht an? Fang an zu swipen & lass die KI den Rest machen
 
 enable_smart_app_banner                   : true                                      # Set to true to show a smart app banner at top of page on mobile devices.
 
