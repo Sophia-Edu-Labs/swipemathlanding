@@ -13,7 +13,9 @@ discord_link                              : https://discord.gg/acHT82EBNG       
 
 app_icon                                  : # assets/appicon.png                      # Automatically populates if not set and if iOS app ID is set.  Otherwise enter path to icon file manually.
 app_name                                  : SwipeMath                                 # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
-app_price                                 : Free                                      # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
+app_price:
+  en: Free
+  de: Kostenlos
 app_description:
   en: Math Exam coming up? Start swiping & Let the AI do the rest
   de: Matheprüfung steht an? Fang an zu wischen & Lass die KI den Rest erledigen
@@ -119,6 +121,7 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - vendor
 
 collections:
   pages:
