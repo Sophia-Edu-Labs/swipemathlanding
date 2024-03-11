@@ -14,8 +14,9 @@ discord_link                              : https://discord.gg/acHT82EBNG       
 app_icon                                  : # assets/appicon.png                      # Automatically populates if not set and if iOS app ID is set.  Otherwise enter path to icon file manually.
 app_name                                  : SwipeMath                                 # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
 app_price                                 : Free                                      # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
-app_description                           : Math Exam coming up?
-                                            Start swiping & Let the AI do the rest
+app_description:
+  en: Math Exam coming up? Start swiping & Let the AI do the rest
+  de: Matheprüfung steht an? Fang an zu wischen & Lass die KI den Rest erledigen
 
 enable_smart_app_banner                   : true                                      # Set to true to show a smart app banner at top of page on mobile devices.
 
@@ -36,20 +37,32 @@ mastodon_link                             :
 
 
 # Feature List                            Edit, add or remove features to be presented.
-features                                  :
+features:
+  de:
+    - title: Animierte Kurzvideos
+      description: Wir haben animierte Kurzvideos erstellt, die das Lernen einfach und spaßig machen!
+      fontawesome_icon_name: play-circle
 
-  - title                                 : Animated Short Videos
-    description                           : We've created animated short Videos that make learning easy and fun!
-    fontawesome_icon_name                 : play-circle
+    - title: Interaktive Übungen
+      description: Unsere Übungen decken alles ab, du kannst sogar Beweise üben!
+      fontawesome_icon_name: star
 
-  - title                                 : Interactive Exercises
-    description                           : Our exercises cover everything, you can even practice proofs!
-    fontawesome_icon_name                 : star
+    - title: KI-generierter Lehrplan
+      description: Nach einigen Interaktionen wird unsere KI dich kennenlernen und immer die richtigen Übungen für dich vorschlagen.
+      fontawesome_icon_name: magic
 
-  - title                                 : AI-generated curriculum
-    description                           : After a few interactions, our AI will start to know you and always suggest just the right exercises for you.
-    fontawesome_icon_name                 : magic
+  en:
+    - title: Animated Short Videos
+      description: We've created animated short videos that make learning easy and fun!
+      fontawesome_icon_name: play-circle
 
+    - title: Interactive Exercises
+      description: Our exercises cover everything, you can even practice proofs!
+      fontawesome_icon_name: star
+
+    - title: AI-generated Curriculum
+      description: After a few interactions, our AI will get to know you and always suggest just the right exercises for you.
+      fontawesome_icon_name: magic
 
 # Theme Settings
 topbar_color                              : "#070c19"
@@ -114,3 +127,9 @@ collections:
 
 # Markdown rendering
 markdown: kramdown
+
+languages: ["en", "de"]
+default_lang: "en"
+exclude_from_localization: ["javascript", "images", "css", "public"]
+parallel_localization: true
+lang_from_path: true

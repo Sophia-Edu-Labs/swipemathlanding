@@ -42,12 +42,12 @@
                                 {{ site.app_name }}
                             </h1>
                             <h2 class="appPrice">
-                                {{ site.app_price }}
+                                {{ site.app_price[site.active_lang] }}
                             </h2>
                         </div>
                         <div class="appDescriptionContainer">
                             <p class ="appDescription">
-                                {{ site.app_description }}
+                                {{ site.app_description[site.active_lang] }}
                             </p>
                         </div>
                         <div class="downloadButtonsContainer">

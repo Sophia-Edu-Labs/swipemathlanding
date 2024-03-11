@@ -2,6 +2,8 @@
 layout: page
 title: Exam practice AI
 include_in_header: true
+lang: en
+permalink: /customcourses
 ---
 
 # Exams

@@ -2,6 +2,8 @@
 layout: page
 title: What's New
 include_in_header: true
+lang: en
+permalink: /changelog
 ---
 
 # Changelog
