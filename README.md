@@ -111,3 +111,10 @@ I'd love to see the sites you create using this little tool.
 
 ## License
 [MIT License](LICENSE)
+
+
+# Local Development
+Important Commands: 
+
+`bundle exec jekyll serve` - Start local development server
+`bundle install` - Install dependencies
