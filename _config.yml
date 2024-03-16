@@ -26,7 +26,7 @@ enable_smart_app_banner                   : true                                
 
 # Information About Yourself
 your_name                                 : Sophia Edu Labs                              
-your_link                                 : https://sophiaedulabs.com                     
+your_link                                 : https://swipemath.com                     
 your_city                                 : Zurich                                
 email_address                             : friedrich@sophiaedulabs.com
 facebook_username                         :                                           
@@ -103,8 +103,21 @@ footer_text_color                         : "#666666"
 
 
 
-
-
+# SEO Plugin
+title: SwipeMath App
+tagline: Learn Math with Short Videos and AI. Download the SwipeMath App.
+description: Math Exam coming up? Start swiping & Let the AI do the rest
+url: https://swipemath.com
+twitter:
+  username: swipemathai
+  card: summary
+logo: /assets/logo.png
+social:
+  links:
+    - https://twitter.com/swipemathai
+    - https://linkedin.com/company/sophia-edu-labs
+    - http://tiktok.com/@sophiaedulabs
+    - https://instagram.com/sophiaedulabs
 
 
 
