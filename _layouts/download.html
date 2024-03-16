@@ -26,6 +26,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
+            padding: 10px;
         }
         .textcentered {
             text-align: center;
@@ -46,13 +48,15 @@
         <div class="verticalcentered">
             <div class="centered">
                 <span class="textcentered">
-                    If you are not redirected, click the appropriate link below.
+                    {{ page.download_text }}
                 </span>
             </div>
             <br/>        
             <div class="centered">
+                <div class="downloadButtonsContainer">
                     <a class="playStoreLink" href="{{site.playstore_link}}"><img class="playStore" src="/assets/playstore.png"></a>
                     <a class="appStoreLink" href="{{site.appstore_link}}"><img class="appStore" src="/assets/appstore.png"></a>
+                </div>
             </div>
         </div>
     </div>
