@@ -146,7 +146,7 @@ markdown: kramdown
 
 languages: ["en", "de"]
 default_lang: "en"
-exclude_from_localization: ["javascript", "images", "css", "public"]
+exclude_from_localization: ["javascript", "images", "css", "public", "sitemap.xml", "robots.txt"]
 parallel_localization: true
 lang_from_path: true
 
