@@ -14,7 +14,7 @@ SwipeMath ist perfekt dafür geeignet, auf die individuellen Stärken und Schwä
 ##  Bundeslandspezifische Abitur/Matura-Trainer
 
 <div style="float: left; width: 50%;">
-  <p style="font-size: 18px;">Wir bieten <b>kostenlose KI-Trainer</b> fürrr den <a href="https://app.sophiaedulabs.com/focusai/stochastic_abitur"><b>Stochastik</b></a>, sowie den <a href="https://app.sophiaedulabs.com/focusai/analysis_abitur"><b>Analysis</b></a> Teil des Abiturs an.</p>
+  <p style="font-size: 18px;">Wir bieten <b>kostenlose KI-Trainer</b> für den <a href="https://app.sophiaedulabs.com/focusai/stochastic_abitur"><b>Stochastik</b></a>, sowie den <a href="https://app.sophiaedulabs.com/focusai/analysis_abitur"><b>Analysis</b></a> Teil des Abiturs an.</p>
 </div>
 <div style="float: right; width: 50%; text-align: right;">
   <img src="../assets/screenshot_abi.png" alt="Stochastik und Analysis Kurs" style="width: 60%;"/>
