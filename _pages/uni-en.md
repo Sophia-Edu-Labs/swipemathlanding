@@ -12,7 +12,7 @@ For some courses, we've developed Custom Focus AIs in order to best meet the lea
 ## [Can't find yours? ](https://forms.gle/Lt5qTWv1cWdAdk2n7)
 Request it [here](https://forms.gle/Lt5qTWv1cWdAdk2n7) and we'll add it as soon as possible!
 
-## TU Berlin: [Analysis I und Lineare Algebra für Ingenieure, 21.02.2024](https://app.sophiaedulabs.com/focusai/calc_tub)
+## TU Berlin: [Analysis I und Lineare Algebra für Ingenieure](https://app.sophiaedulabs.com/focusai/calc_tub)
 This course was designed specifically to prepare you for the Analysis part of the exam. We both took this course, so we know what it takes! 😏
 Try it out [here](https://app.sophiaedulabs.com/focusai/calc_tub)!
 
