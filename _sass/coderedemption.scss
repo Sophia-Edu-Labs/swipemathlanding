@@ -41,7 +41,6 @@
         padding-top: 20px;
         background-color: white; //#060c19;
 
-
         h1,
         h2 {
             text-align: center;
@@ -50,15 +49,27 @@
         }
     }
 
-    @media (min-width: 768px) {
-        flex-direction: row;
+    @media (max-width: 1080px) {
+        flex-direction: column;
+        min-height: 100vh;
+
+        .left-side,
+        .right-side {
+            width: 100%;
+        }
+
+        .left-side {
+            min-height: 150pt;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
     }
 }
 
 .codeBlock {
     background-color: #f4f4f4;
     color: black;
-    padding: 20px; // Merged the duplicate padding property
+    padding: 20px;
     font-family: monospace;
     line-height: 1.5;
     border-radius: 5px;
@@ -84,40 +95,26 @@
     color: green;
 }
 
-
 .redemptionButtonsContainer {
     width: 50vw;
-    /* Takes 100% of the available width */
     height: auto;
-    /* Adjust height automatically based on the content */
     display: flex;
-    /* Use flexbox to align children in a row */
     flex-wrap: wrap;
-    /* Allow items to wrap to the next line if there's no space */
     align-items: center;
-    /* Center the buttons vertically */
     justify-content: center;
-    /* Center the buttons horizontally */
 }
 
 .redemptionButton {
     display: inline-flex;
-    /* Use inline-flex for the buttons to align properly and wrap */
     align-items: center;
-    /* Aligns the image vertically center */
     justify-content: center;
-    /* Aligns the image horizontally center */
     height: 50pt;
-    /* Restrict max height */
     margin: 5px;
-    /* Add some space around buttons */
 }
 
 .redemptionButton img {
     max-height: 100%;
-    /* The image takes the maximum height allowed by its parent */
     width: auto;
-    /* Width is automatically adjusted to maintain aspect ratio */
 }
 
 .howtoredeem {
@@ -134,11 +131,8 @@
     align-items: start;
     font-weight: 300;
 
-    // min-height: 30vh;
-
     ol {
         padding-left: 30px;
-        /* Add padding to the left of the list */
         margin: 0;
     }
 
