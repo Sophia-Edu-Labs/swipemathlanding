@@ -151,3 +151,14 @@ parallel_localization: true
 lang_from_path: true
 
 repository: Sophia-Edu-Labs/swipemathlanding
+
+plugins:
+  - jekyll-datapage-generator
+
+page_gen:
+  - index_files: false
+    data: 'codes'
+    template: 'code'
+    name: 'code'
+    dir: 'redeem-code'
+    debug: true

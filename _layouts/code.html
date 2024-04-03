@@ -1,0 +1,54 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+{% include head.html %}
+
+<body class="subPageBody">
+    <style>
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+        }
+        .textcentered {
+            text-align: center;
+            width: max-content;
+        }
+        .verticalcentered {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+    </style>
+    <div class="headerBackground subPageHeaderBackground">
+        <div class="container subPageContainer">
+        {% include header.html %}
+        </div>
+        <div class="verticalcentered">
+            <div class="centered">
+                <span class="textcentered">
+                    {{ page.title }}<br/>
+                    <span class="subTitle">{{ page.code }}</span>
+                </span>
+            </div>
+            <br/>        
+            <div class="centered">
+                <div class="downloadButtonsContainer">
+                    <a class="playStoreLink" href="{{site.playstore_link}}"><img class="playStore" src="/assets/playstore.png"></a>
+                    <a class="appStoreLink" href="{{site.appstore_link}}"><img class="appStore" src="/assets/appstore.png"></a>
+                </div>
+            </div>
+        </div>
+        {% include appstoreimages.html %}
+    </div>
+</body>
+
+</html>
