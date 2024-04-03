@@ -7,48 +7,84 @@
 
 {% include head.html %}
 
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/coderedemption.css' | relative_url }}">
+</head>
+
 <body class="subPageBody">
-    <style>
-        .centered {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            padding: 10px;
-        }
-        .textcentered {
-            text-align: center;
-            width: max-content;
-        }
-        .verticalcentered {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 70vh;
-        }
-    </style>
     <div class="headerBackground subPageHeaderBackground">
         <div class="container subPageContainer">
-        {% include header.html %}
+            {% include header.html %}
         </div>
-        <div class="verticalcentered">
-            <div class="centered">
-                <span class="textcentered">
-                    {{ page.title }}<br/>
-                    <span class="subTitle">{{ page.code }}</span>
-                </span>
+        <div class="split-screen-container">
+            <!-- Left side - Image -->
+            <div class="left-side" style="background-image: url('{{page.image}}');">
+                <!-- You can place additional content here if needed -->
             </div>
-            <br/>        
-            <div class="centered">
-                <div class="downloadButtonsContainer">
-                    <a class="playStoreLink" href="{{site.playstore_link}}"><img class="playStore" src="/assets/playstore.png"></a>
-                    <a class="appStoreLink" href="{{site.appstore_link}}"><img class="appStore" src="/assets/appstore.png"></a>
-                </div>
+            <!-- Right side - Existing Content -->
+            <div class="right-side">
+                <h1>1 Woche kostenfrei Lernen mit SwipeMath AI</h1>
+                <h2>Angebotscode für {{ page.title }}</h1>
+                    <div class="verticalcentered">
+                        <div class="centered">
+                            <div class="textcentered">
+                                <div class="codeBlock" onclick="copyToClipboard(this)">
+                                    <code>{{ page.code }}</code>
+                                    <button class="copyButton">
+                                        <span class="material-icons">content_copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="centered">
+                            <div class="redemptionButtonsContainer">
+                                <a class="redemptionButton" href="{{site.playstore_link}}"><img
+                                        src="/assets/playstore-redemption-de.png"></a>
+                                <a class="redemptionButton" href="{{site.appstore_link}}"><img
+                                        src="/assets/appstore-redemption-de.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="howtoredeem">
+                        <h2>So löst du deine kostenfreie Test-Woche ein</h2>
+
+                        <ol>
+                            <li>Klicke auf den Button für den AppStore deines Smartphones</li>
+                            <li>Folge den Instruktionen</li>
+                            <li>Öffne SwipeMath und lerne Mathe</li>
+                        </ol>
+                        <div class="importantText">
+                            WICHTIG: Nach Einlösung des Codes musst du das Abo kündigen, wenn du es nach der Woche nicht
+                            kostenpflichtig fortführen willst!
+                        </div>
+                    </div>
             </div>
         </div>
         {% include appstoreimages.html %}
     </div>
 </body>
+
+<script>
+    function copyToClipboard(element) {
+        // Find the <code> sibling to the button and get its text content
+        var codeToCopy = element.querySelector('code').innerText;
+        navigator.clipboard.writeText(codeToCopy).then(() => {
+            // Change the button icon to success icon
+            var buttonIcon = element.querySelector('.material-icons');
+            buttonIcon.textContent = 'check_circle';
+            buttonIcon.classList.add('successIcon');
+            // Hide the button icon after 2 seconds
+            setTimeout(function () {
+                buttonIcon.textContent = 'content_copy';
+                buttonIcon.classList.remove('successIcon');
+            }, 2000);
+        }, (err) => {
+            console.error('Error copying text: ', err);
+        });
+    }
+</script>
+
 
 </html>

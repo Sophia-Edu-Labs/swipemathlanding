@@ -1,0 +1,154 @@
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.textcentered {
+    text-align: center;
+    width: max-content;
+}
+
+.verticalcentered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.split-screen-container {
+    display: flex;
+    height: 100vh;
+
+    .left-side,
+    .right-side {
+        width: 50%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .right-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding: 0;
+        padding-top: 20px;
+        background-color: white; //#060c19;
+
+
+        h1,
+        h2 {
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+.codeBlock {
+    background-color: #f4f4f4;
+    color: black;
+    padding: 20px; // Merged the duplicate padding property
+    font-family: monospace;
+    line-height: 1.5;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 26px;
+    max-width: 100%;
+    overflow-x: auto;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #e0e0e0;
+    }
+}
+
+.copyButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+}
+
+.successIcon {
+    color: green;
+}
+
+
+.redemptionButtonsContainer {
+    width: 50vw;
+    /* Takes 100% of the available width */
+    height: auto;
+    /* Adjust height automatically based on the content */
+    display: flex;
+    /* Use flexbox to align children in a row */
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line if there's no space */
+    align-items: center;
+    /* Center the buttons vertically */
+    justify-content: center;
+    /* Center the buttons horizontally */
+}
+
+.redemptionButton {
+    display: inline-flex;
+    /* Use inline-flex for the buttons to align properly and wrap */
+    align-items: center;
+    /* Aligns the image vertically center */
+    justify-content: center;
+    /* Aligns the image horizontally center */
+    height: 50pt;
+    /* Restrict max height */
+    margin: 5px;
+    /* Add some space around buttons */
+}
+
+.redemptionButton img {
+    max-height: 100%;
+    /* The image takes the maximum height allowed by its parent */
+    width: auto;
+    /* Width is automatically adjusted to maintain aspect ratio */
+}
+
+.howtoredeem {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    background-color: #060c19;
+    color: white;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    font-weight: 300;
+
+    // min-height: 30vh;
+
+    ol {
+        padding-left: 30px;
+        /* Add padding to the left of the list */
+        margin: 0;
+    }
+
+    h2 {
+        text-align: left !important;
+        padding-left: 0 !important;
+    }
+}
+
+.importantText {
+    margin-top: 30pt;
+    font-weight: bold;
+}
