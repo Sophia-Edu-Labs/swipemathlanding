@@ -161,4 +161,4 @@ page_gen:
     template: 'code'
     name: 'code'
     dir: 'redeem-code'
-    debug: true
+    debug: false
