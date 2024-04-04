@@ -159,6 +159,6 @@ page_gen:
   - index_files: false
     data: 'codes'
     template: 'code'
-    name: 'code'
+    name_expr: record['code'].upcase
     dir: 'redeem-code'
     debug: false
