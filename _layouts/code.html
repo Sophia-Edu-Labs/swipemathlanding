@@ -49,16 +49,25 @@
                         </div>
                     </div>
                     <div class="howtoredeem">
-                        <h2>So löst du deine kostenfreie Test-Woche ein</h2>
-
-                        <ol>
-                            <li>Klicke auf den Button für den AppStore deines Smartphones</li>
-                            <li>Folge den Instruktionen</li>
-                            <li>Öffne SwipeMath und lerne Mathe</li>
-                        </ol>
-                        <div class="importantText">
-                            Möchtest du das Abo nach der kostenlosen Woche nicht kostenpflichtig fortführen, so musst du
-                            es entsprechend kündigen.
+                        <div class="tabs">
+                            <button class="tablinks" onclick="openPlatform(event, 'Android')">Android</button>
+                            <button class="tablinks" onclick="openPlatform(event, 'Apple')">Apple</button>
+                        </div>
+                        <div id="Android" class="tabcontent">
+                            <h2>So löst du deine kostenfreie Test-Woche ein (Android)</h2>
+                            <ol>
+                                <li>Klicke auf den Button für den Google Play Store</li>
+                                <li>Folge den Instruktionen</li>
+                                <li>Öffne SwipeMath und lerne Mathe</li>
+                            </ol>
+                        </div>
+                        <div id="Apple" class="tabcontent">
+                            <h2>So löst du deine kostenfreie Test-Woche ein (Apple)</h2>
+                            <ol>
+                                <li>Klicke auf den Button für den App Store</li>
+                                <li>Folge den Instruktionen</li>
+                                <li>Öffne SwipeMath und lerne Mathe</li>
+                            </ol>
                         </div>
                     </div>
             </div>
@@ -85,6 +94,35 @@
             console.error('Error copying text: ', err);
         });
     }
+    function openPlatform(evt, platformName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(platformName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // Function to detect the platform and open the corresponding tab
+    function detectAndOpenPlatformTab() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if (/android/i.test(userAgent)) {
+            document.querySelector(".tablinks[onclick*='Android']").click();
+        } else if (/iPad|iPhone|iPod|Macintosh/.test(userAgent) && !window.MSStream) {
+            document.querySelector(".tablinks[onclick*='Apple']").click();
+        } else {
+            // Default to one, e.g., Android if no specific platform is detected
+            document.querySelector(".tablinks[onclick*='Android']").click();
+        }
+    }
+
+    // Call the function when the page has loaded
+    document.addEventListener("DOMContentLoaded", detectAndOpenPlatformTab);
 </script>
 
 

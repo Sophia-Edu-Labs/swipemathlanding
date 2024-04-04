@@ -119,10 +119,6 @@
 
 .howtoredeem {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
     background-color: #060c19;
     color: white;
     line-height: 1.4;
@@ -131,6 +127,47 @@
     justify-content: end;
     align-items: start;
     font-weight: 300;
+    width: 100%;
+
+    /* Style the tab */
+    .tabs {
+        display: flex;
+        overflow: hidden;
+        border: none;
+        background-color: #f1f1f1;
+        width: 100%;
+        padding: 0;
+    }
+
+    /* Style the buttons inside the tab */
+    .tablinks {
+        flex: 1;
+        background-color: inherit;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+        text-align: center;
+    }
+
+    /* Change background color of buttons on hover */
+    .tablinks:hover {
+        background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tablinks.active {
+        background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: none;
+    }
 
     ol {
         padding-left: 30px;
