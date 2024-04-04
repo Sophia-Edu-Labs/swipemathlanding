@@ -8,7 +8,7 @@
 
 .textcentered {
     text-align: center;
-    width: max-content;
+    width: 100%;
 }
 
 .verticalcentered {
@@ -63,131 +63,180 @@
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
         }
-    }
-}
 
-.codeBlock {
-    background-color: #f4f4f4;
-    color: black;
-    padding: 20px;
-    font-family: monospace;
-    line-height: 1.5;
-    border-radius: 5px;
-    margin-top: 10px;
-    font-size: 26px;
-    max-width: 100%;
-    overflow-x: auto;
-    cursor: pointer;
-
-    &:hover {
-        background-color: #e0e0e0;
-    }
-}
-
-.copyButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #000000;
-}
-
-.successIcon {
-    color: green;
-}
-
-.redemptionButtonsContainer {
-    width: 50vw;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.redemptionButton {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 50pt;
-    margin: 5px;
-}
-
-.redemptionButton img {
-    max-height: 100%;
-    width: auto;
-}
-
-.toptabs {
-    padding-top: 20px;
-    width: 100%;
-
-    /* Style the tab */
-    .tabs {
-        display: flex;
-        overflow: hidden;
-        border: none;
-        background-color: #f1f1f1;
-        width: 100%;
-        padding: 0;
+        .stickytabs {
+            position: fixed;
+            width: 100% !important;
+            bottom: 0;
+            left: 0% !important;
+            right: 0% !important;
+        }
     }
 
-    /* Style the buttons inside the tab */
-    .tablinks {
-        flex: 1;
-        background-color: inherit;
-        border: none;
-        outline: none;
+    .codeBlock {
+        background-color: #f4f4f4;
+        color: black;
+        padding: 20px;
+        font-family: monospace;
+        line-height: 1.5;
+        border-radius: 5px;
+        margin-top: 10px;
+        font-size: 26px;
+        max-width: 100%;
+        overflow-x: auto;
         cursor: pointer;
-        padding: 14px 16px;
-        transition: 0.3s;
-        font-size: 17px;
-        text-align: center;
+
+        &:hover {
+            background-color: #e0e0e0;
+        }
     }
 
-    /* Change background color of buttons on hover */
-    .tablinks:hover {
-        background-color: #ddd;
-    }
-
-    /* Create an active/current tablink class */
-    .tablinks.active {
-        background-color: #ccc;
-    }
-
-    /* Style the tab content */
-    .tabcontent {
-        display: none;
-        padding: 6px 12px;
+    .copyButton {
+        background: none;
         border: none;
-    }
-}
-
-.howtoredeem {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background-color: #060c19;
-    color: white;
-    line-height: 1.4;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: start;
-    font-weight: 300;
-    width: 100%;
-
-
-    ol {
-        padding-left: 30px;
-        margin: 0;
+        cursor: pointer;
+        color: #000000;
     }
 
-    h2 {
-        text-align: left !important;
-        padding-left: 0 !important;
+    .successIcon {
+        color: green;
     }
-}
 
-.importantText {
-    margin-top: 30pt;
-    font-weight: normal;
+    .redemptionButtonsContainer {
+        width: 50vw;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
 
+    .redemptionButton {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 50pt;
+        margin: 5px;
+        cursor: pointer;
+    }
+
+    .redemptionButton img {
+        max-height: 100%;
+        width: auto;
+    }
+
+    .stickytabs {
+        padding-top: 20px;
+        width: 50%;
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        right: 0%;
+
+        /* Style the tab */
+        .tabs {
+            display: flex;
+            overflow: hidden;
+            border: none;
+            background-color: #f1f1f1;
+            width: 100%;
+            padding: 0;
+            cursor: pointer;
+
+        }
+
+        /* Style the buttons inside the tab */
+        .tablinks {
+            flex: 1;
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+            text-align: center;
+        }
+
+        /* Change background color of buttons on hover */
+        .tablinks:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tablinks.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: none;
+        }
+    }
+
+    .howtoredeem {
+        background-color: transparent; //#060c19;
+        color: black;
+        line-height: 1.4;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        font-weight: 300;
+        width: 100%;
+        margin-top: 50px;
+
+        ol {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-left: 0;
+            width: 100%; // Ensure the list takes full width to allow centering of children
+            display: flex;
+            flex-direction: column;
+            align-items: center; // Center-align the list items
+        }
+
+        ol li {
+            display: flex;
+            flex-direction: column; // Stack contents vertically
+            align-items: center; // Center-align the bubble and text within each list item
+            margin-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+        }
+
+        ol li:before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px; // Space between the bubble and the text
+        }
+
+        h2 {
+            text-align: center !important;
+            padding-left: 0 !important;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: darkblue;
+            text-decoration: underline;
+        }
+    }
+
+    .importantText {
+        margin-top: 30pt;
+        font-weight: normal;
+
+    }
 }
