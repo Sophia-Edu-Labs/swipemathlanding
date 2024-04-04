@@ -47,15 +47,15 @@
                         <br />
                         <div class="centered">
                             <div class="redemptionButtonsContainer">
-                                <a class="redemptionButton" href="{{site.playstore_link}}"><img
+                                <a class="redemptionButton Android" href="{{site.playstore_link}}"><img
                                         src="/assets/playstore-redemption-de.png"></a>
-                                <a class="redemptionButton" href="{{site.appstore_link}}"><img
+                                <a class="redemptionButton Apple" href="{{site.appstore_link}}"><img
                                         src="/assets/appstore-redemption-de.png"></a>
                             </div>
                         </div>
                     </div>
                     <div class="howtoredeem">
-                        <div id="Android" class="tabcontent">
+                        <div class="tabcontent Android">
                             <h2>So löst du deine kostenfreie Test-Woche ein (Android)</h2>
                             <ol>
                                 <li>Klicke auf den Button für den Google Play Store</li>
@@ -63,7 +63,7 @@
                                 <li>Öffne SwipeMath und lerne Mathe</li>
                             </ol>
                         </div>
-                        <div id="Apple" class="tabcontent">
+                        <div class="tabcontent Apple">
                             <h2>So löst du deine kostenfreie Test-Woche ein (Apple)</h2>
                             <ol>
                                 <li>Klicke auf den Button für den App Store</li>
@@ -97,16 +97,21 @@
         });
     }
     function openPlatform(evt, platformName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
+        var i, platformElements, tablinks;
+        // Hide all elements with class 'Android' or 'Apple'
+        platformElements = document.querySelectorAll(".Android, .Apple");
+        for (i = 0; i < platformElements.length; i++) {
+            platformElements[i].style.display = "none";
+        }
+        // Show elements with the selected platform class
+        platformElements = document.querySelectorAll("." + platformName);
+        for (i = 0; i < platformElements.length; i++) {
+            platformElements[i].style.display = "block";
         }
         tablinks = document.getElementsByClassName("tablinks");
         for (i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
-        document.getElementById(platformName).style.display = "block";
         evt.currentTarget.className += " active";
     }
 
