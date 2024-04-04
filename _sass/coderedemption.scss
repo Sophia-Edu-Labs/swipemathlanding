@@ -117,16 +117,8 @@
     width: auto;
 }
 
-.howtoredeem {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background-color: #060c19;
-    color: white;
-    line-height: 1.4;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: start;
-    font-weight: 300;
+.toptabs {
+    padding-top: 20px;
     width: 100%;
 
     /* Style the tab */
@@ -168,6 +160,20 @@
         padding: 6px 12px;
         border: none;
     }
+}
+
+.howtoredeem {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #060c19;
+    color: white;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    font-weight: 300;
+    width: 100%;
+
 
     ol {
         padding-left: 30px;
