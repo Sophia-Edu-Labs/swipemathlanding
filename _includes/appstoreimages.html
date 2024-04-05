@@ -58,6 +58,7 @@
                 var $appStoreLink = $(".appStoreLink");
                 if ($.trim($appStoreLink.attr('href')).length == 0) {
                     $($appStoreLink).attr("href", appInfo.trackViewUrl);
+                    ensure_campaign_params(); // Call the method after setting the App Store link
                 }
 
                 console.info(appInfo);

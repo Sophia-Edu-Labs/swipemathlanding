@@ -33,6 +33,40 @@
 
 	<!-- SEO -->
 	{% seo %}
+
+	<!-- Campaigns -->
+	<script>
+		function ensure_campaign_params() {
+			const utmCampaign = localStorage.getItem('utm_campaign');
+			if (utmCampaign) {
+				document.querySelectorAll('a[href]').forEach(function (link) {
+					const url = new URL(link.href);
+					if (url.hostname === 'apps.apple.com') {
+						url.searchParams.set('pt', '2426159');
+						url.searchParams.set('ct', utmCampaign);
+						url.searchParams.set('mt', '8');
+						link.href = url.toString();
+						console.log("SET to new URL: ", link.href);
+					} else if (url.hostname === 'play.google.com' && url.pathname.startsWith('/store/apps')) {
+						url.searchParams.set('utm_campaign', utmCampaign);
+						link.href = url.toString();
+						console.log("SET to new URL: ", link.href);
+					}
+
+				});
+			}
+		}
+		document.addEventListener('DOMContentLoaded', function () {
+			const params = new URLSearchParams(window.location.search);
+			params.forEach((value, key) => {
+				if (key.startsWith('utm_')) {
+					localStorage.setItem(key, value);
+				}
+			});
+
+			ensure_campaign_params();
+		});
+	</script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K2GKRDYQ2E"></script>
