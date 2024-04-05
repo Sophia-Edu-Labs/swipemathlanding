@@ -8,9 +8,9 @@
 {% include head.html %}
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         var userAgent = navigator.userAgent.toLowerCase();
-    
+
         if (userAgent.includes("android") || userAgent.includes("cros")) {
             window.location.href = '{{site.playstore_link}}';
         } else if (userAgent.includes("iphone") || userAgent.includes("macintosh")) {
@@ -29,10 +29,12 @@
             width: 100%;
             padding: 10px;
         }
+
         .textcentered {
             text-align: center;
             width: max-content;
         }
+
         .verticalcentered {
             display: flex;
             flex-direction: column;
@@ -43,7 +45,7 @@
     </style>
     <div class="headerBackground subPageHeaderBackground">
         <div class="container subPageContainer">
-        {% include header.html %}
+            {% include header.html %}
         </div>
         <div class="verticalcentered">
             <div class="centered">
@@ -51,11 +53,13 @@
                     {{ page.download_text }}
                 </span>
             </div>
-            <br/>        
+            <br />
             <div class="centered">
                 <div class="downloadButtonsContainer">
-                    <a class="playStoreLink" href="{{site.playstore_link}}"><img class="playStore" src="/assets/playstore.png"></a>
-                    <a class="appStoreLink" href="{{site.appstore_link}}"><img class="appStore" src="/assets/appstore.png"></a>
+                    <a class="playStoreLink" href="{{site.playstore_link}}"><img class="playStore"
+                            src="/assets/playstore.png"></a>
+                    <a class="appStoreLink" href="{{site.appstore_link}}"><img class="appStore"
+                            src="/assets/appstore.png"></a>
                 </div>
             </div>
         </div>
