@@ -58,12 +58,17 @@
 		}
 		document.addEventListener('DOMContentLoaded', function () {
 			const params = new URLSearchParams(window.location.search);
+			let campaignSet = false;
 			params.forEach((value, key) => {
 				if (key.startsWith('utm_')) {
 					localStorage.setItem(key, value);
+					campaignSet = true;
 				}
 			});
-
+			if (!campaignSet && window.location.pathname.includes('redeem-code')) {
+				const code = window.location.pathname.split('/').pop();
+				localStorage.setItem('utm_campaign', 'CODE_' + code.toUpperCase());
+			}
 			ensure_campaign_params();
 		});
 	</script>
