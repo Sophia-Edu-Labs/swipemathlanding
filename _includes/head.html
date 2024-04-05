@@ -58,10 +58,8 @@
 				document.querySelectorAll('a[href]').forEach(function (link) {
 					if (link.href.includes('apps.apple.com')) {
 						link.href = setAppStoreUrl(link.href, utmCampaign);
-						console.log("SET to new URL: ", link.href);
 					} else if (link.href.includes('play.google.com')) {
 						link.href = setPlayStoreUrl(link.href, utmCampaign);
-						console.log("SET to new URL: ", link.href);
 					}
 				});
 			}
