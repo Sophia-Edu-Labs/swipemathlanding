@@ -11,10 +11,31 @@
     document.addEventListener('DOMContentLoaded', function () {
         var userAgent = navigator.userAgent.toLowerCase();
 
+        function redirectToStore(url) {
+            console.log("Redirecting to store: " + url);
+            window.location.href = url;
+        }
+
         if (userAgent.includes("android") || userAgent.includes("cros")) {
-            window.location.href = '{{site.playstore_link}}';
+            redirectToStore(setPlayStoreUrl('{{site.playstore_link}}', localStorage.getItem('utm_campaign')));
         } else if (userAgent.includes("iphone") || userAgent.includes("macintosh")) {
-            window.location.href = '{{site.appstore_link}}';
+            // Use MutationObserver to wait for the appStoreLink to be set
+            var appStoreLinkElement = document.querySelector('.appStoreLink');
+            if (appStoreLinkElement) {
+                var observer = new MutationObserver(function (mutations) {
+                    mutations.forEach(function (mutation) {
+                        if (mutation.type === 'attributes' && mutation.attributeName === 'href') {
+                            var newUrl = setAppStoreUrl(appStoreLinkElement.getAttribute('href'), localStorage.getItem('utm_campaign'));
+                            redirectToStore(newUrl);
+                            observer.disconnect(); // Stop observing after redirect
+                        }
+                    });
+                });
+
+                observer.observe(appStoreLinkElement, {
+                    attributes: true //configure it to listen to attribute changes
+                });
+            }
         }
     });
 </script>

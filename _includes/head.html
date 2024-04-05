@@ -36,26 +36,37 @@
 
 	<!-- Campaigns -->
 	<script>
+		function setAppStoreUrl(originalUrl, utmCampaign) {
+			const url = new URL(originalUrl);
+			url.searchParams.set('pt', '2426159');
+			url.searchParams.set('ct', utmCampaign);
+			url.searchParams.set('mt', '8');
+			return url.toString();
+		}
+
+		function setPlayStoreUrl(originalUrl, utmCampaign) {
+			const url = new URL(originalUrl);
+			if (url.pathname.startsWith('/store/apps')) {
+				url.searchParams.set('utm_campaign', utmCampaign);
+			}
+			return url.toString();
+		}
+
 		function ensure_campaign_params() {
 			const utmCampaign = localStorage.getItem('utm_campaign');
 			if (utmCampaign) {
 				document.querySelectorAll('a[href]').forEach(function (link) {
-					const url = new URL(link.href);
-					if (url.hostname === 'apps.apple.com') {
-						url.searchParams.set('pt', '2426159');
-						url.searchParams.set('ct', utmCampaign);
-						url.searchParams.set('mt', '8');
-						link.href = url.toString();
+					if (link.href.includes('apps.apple.com')) {
+						link.href = setAppStoreUrl(link.href, utmCampaign);
 						console.log("SET to new URL: ", link.href);
-					} else if (url.hostname === 'play.google.com' && url.pathname.startsWith('/store/apps')) {
-						url.searchParams.set('utm_campaign', utmCampaign);
-						link.href = url.toString();
+					} else if (link.href.includes('play.google.com')) {
+						link.href = setPlayStoreUrl(link.href, utmCampaign);
 						console.log("SET to new URL: ", link.href);
 					}
-
 				});
 			}
 		}
+
 		document.addEventListener('DOMContentLoaded', function () {
 			const params = new URLSearchParams(window.location.search);
 			let campaignSet = false;
