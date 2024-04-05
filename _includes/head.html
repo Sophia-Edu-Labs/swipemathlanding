@@ -44,22 +44,30 @@
 			return url.toString();
 		}
 
-		function setPlayStoreUrl(originalUrl, utmCampaign) {
+		function setPlayStoreUrl(originalUrl, utmCampaign, utmSource, utmMedium) {
 			const url = new URL(originalUrl);
 			if (url.pathname.startsWith('/store/apps')) {
 				url.searchParams.set('utm_campaign', utmCampaign);
+				if (utmSource) {
+					url.searchParams.set('utm_source', utmSource); // Set utm_source
+				}
+				if (utmMedium) {
+					url.searchParams.set('utm_medium', utmMedium); // Set utm_medium
+				}
 			}
 			return url.toString();
 		}
 
 		function ensure_campaign_params() {
 			const utmCampaign = localStorage.getItem('utm_campaign');
+			const utmSource = localStorage.getItem('utm_source');
+			const utmMedium = localStorage.getItem('utm_medium');
 			if (utmCampaign) {
 				document.querySelectorAll('a[href]').forEach(function (link) {
 					if (link.href.includes('apps.apple.com')) {
 						link.href = setAppStoreUrl(link.href, utmCampaign);
 					} else if (link.href.includes('play.google.com')) {
-						link.href = setPlayStoreUrl(link.href, utmCampaign);
+						link.href = setPlayStoreUrl(link.href, utmCampaign, utmSource, utmMedium);
 					}
 				});
 			}

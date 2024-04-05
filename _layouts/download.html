@@ -16,7 +16,7 @@
         }
 
         if (userAgent.includes("android") || userAgent.includes("cros")) {
-            redirectToStore(setPlayStoreUrl('{{site.playstore_link}}', localStorage.getItem('utm_campaign')));
+            redirectToStore(setPlayStoreUrl('{{site.playstore_link}}', localStorage.getItem('utm_campaign'), localStorage.getItem('utm_source'), localStorage.getItem('utm_medium')));
         } else if (userAgent.includes("iphone") || userAgent.includes("macintosh")) {
             // Use MutationObserver to wait for the appStoreLink to be set
             var appStoreLinkElement = document.querySelector('.appStoreLink');
