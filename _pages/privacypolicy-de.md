@@ -20,16 +20,16 @@ How We Use Your Information
 a. To Improve Services: The information collected helps us tailor educational content, address technical issues, enhance user experience, and secure our platforms.
 b. Analytics and Performance: We analyze aggregated usage data to understand user behavior patterns, which aids in optimizing our service offerings and content.
 
-## Sharing Your Information
+## Sharing Your Information
 
 a. Service Providers: Information may be shared with third-party providers, such as Google Analytics and RevenueCat, to facilitate specific services on our behalf, including analytics and payment processing. These providers are bound by confidentiality agreements and are prohibited from using the data for other purposes.
 b. Legal Requirements: We may disclose information if legally required, to protect our rights, or to prevent fraud or other illegal activities.
 
-## Data Security
+## Data Security
 
 We employ industry-standard measures to protect against unauthorized access, alteration, or destruction of data. However, no internet-based service is completely secure, and we cannot guarantee absolute security.
 
-## Your Rights and Choices
+## Your Rights and Choices
 
 Without account creation, our ability to identify or associate data with individual users is limited. However, you can control cookies through your browser settings and opt out of certain analytics and advertising networks by following their provided opt-out procedures.
 Changes to This Privacy Policy
