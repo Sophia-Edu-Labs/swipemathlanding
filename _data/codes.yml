@@ -45,12 +45,13 @@
 - code: ABI2024
   title: Abitur 2024
   image: abitur.webp
-- code: WILHELMSGYMNASIUM
+- code: WILHELMSGYM
   title: Wilhelmsgymnasium
   image: wg.jpeg
 - code: WILHELMSGYM
   title: Wilhelmsgymnasium
   image: wg.jpeg
+  urloverride: WILHELMSGYMNASIUM
 - code: RICK
   title: Mathe mit Rick
   image: Rick.png
