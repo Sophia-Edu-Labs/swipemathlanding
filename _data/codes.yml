@@ -6,6 +6,9 @@
 - code: BERLIN
   title: Berlin
   image: berlin.jpg
+- code: BERLIN24
+  title: Berlin
+  image: berlin.jpg
 - code: HAMBURG
   title: Hamburg
   image: hamburg.jpg
