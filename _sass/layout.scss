@@ -617,11 +617,25 @@ footer {
 .footerText {
 	color: $footer-text-color;
 	display: block;
-	line-height: 1.5;
+	line-height: 1.0;
 	width: 100%;
 	text-align: center;
 	padding-top: 70px;
 	padding-bottom: 70px;
+}
+
+.footerContactMail {
+	color: $footer-text-color;
+	display: block;
+	line-height: 1.5;
+	width: 100%;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	a {
+		color: lightseagreen;
+	}
 }
 
 .footerIcons {
