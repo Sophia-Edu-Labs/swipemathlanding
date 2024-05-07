@@ -17,8 +17,8 @@ app_price:
   en: Free
   de: Kostenlos
 app_description:
-  en: Math Exam coming up? Start swiping & Let the AI do the rest
-  de: Mathe-Abi steht an? Fang an zu swipen & lass die KI den Rest machen
+  en: Learning math? Swipe 15 minutes every day & Let the AI do the rest
+  de: Mathe lernen? Swipe jeden Tag 15 Minuten & lass die KI den Rest machen
 
 enable_smart_app_banner                   : true                                      # Set to true to show a smart app banner at top of page on mobile devices.
 
@@ -41,6 +41,10 @@ mastodon_link                             :
 # Feature List                            Edit, add or remove features to be presented.
 features:
   de:
+    - title: Halte deinen Mathe-Streak!
+      description: Lerne jeden Tag 15 Minuten Mathe. Mit KI-Lektionen, die individuell auf dich angepasst sind.
+      fontawesome_icon_name: magic
+
     - title: Animierte Kurzvideos
       description: Wir haben animierte Kurzvideos erstellt, die das Lernen einfach und spaßig machen!
       fontawesome_icon_name: play-circle
@@ -49,11 +53,12 @@ features:
       description: Unsere Übungen decken alles ab, du kannst sogar Beweise üben!
       fontawesome_icon_name: star
 
-    - title: KI-generierter Lehrplan
-      description: Nach einigen Interaktionen wird unsere KI dich kennenlernen und immer die richtigen Übungen für dich vorschlagen.
-      fontawesome_icon_name: magic
 
   en:
+    - title: Keep up your math streak!
+      description: Learn math for 15 minutes every day. With AI lessons that are individually tailored to you.
+      fontawesome_icon_name: magic
+
     - title: Animated Short Videos
       description: We've created animated short videos that make learning easy and fun!
       fontawesome_icon_name: play-circle
@@ -61,10 +66,6 @@ features:
     - title: Interactive Exercises
       description: Our exercises cover everything, you can even practice proofs!
       fontawesome_icon_name: star
-
-    - title: AI-generated Curriculum
-      description: After a few interactions, our AI will get to know you and always suggest just the right exercises for you.
-      fontawesome_icon_name: magic
 
 # Theme Settings
 topbar_color                              : "#070c19"
