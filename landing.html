@@ -344,19 +344,38 @@ layout: default
 
     <!-- Meta Pixel Code -->
     <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1045222573957784');
-        fbq('track', 'PageView');
+        // Function to send event to Facebook
+        function sendToFacebook(event, data) {
+            if (typeof fbq !== 'undefined') {
+                fbq('track', event, data);
+            }
+
+            // Send event to Google Cloud Function for Conversions API
+            fetch('https://us-central1-chatwootbots.cloudfunctions.net/facebookEventFunction', {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    event: event,
+                    data: data,
+                }),
+            });
+        }
+
+        // Add click event listener to the CTA button
+        document.querySelector('.cta-button').addEventListener('click', function (e) {
+            sendToFacebook('Contact', {
+                content_name: 'Mathe-Nachhilfe Anfrage',
+                content_category: 'Education',
+                value: 3.99,
+                currency: 'EUR',
+            });
+        });
+
+        // Track PageView event
+        sendToFacebook('PageView', {});
     </script>
     <noscript>
         <img height="1" width="1" style="display:none"
