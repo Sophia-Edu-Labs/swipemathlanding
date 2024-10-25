@@ -342,54 +342,6 @@ layout: default
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <!-- Meta Pixel Code -->
-    <!-- <script>
-        // Function to send event to Facebook
-        function sendToFacebook(event, data) {
-            if (typeof fbq !== 'undefined') {
-                fbq('track', event, data);
-            }
-
-            // Send event to Google Cloud Function for Conversions API
-            fetch('https://us-central1-chatwootbots.cloudfunctions.net/facebookEventFunction', {
-                method: 'POST',
-                mode: 'cors',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    event: event,
-                    data: data,
-                }),
-            });
-        }
-
-        // Add click event listener to the CTA button
-        document.querySelector('.cta-button').addEventListener('click', function (e) {
-            sendToFacebook('Contact', {
-                content_name: 'Mathe-Nachhilfe Anfrage',
-                content_category: 'Education',
-                value: 3.99,
-                currency: 'EUR',
-            });
-        });
-
-        // Track PageView event
-        sendToFacebook('PageView', {});
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=1045222573957784&ev=PageView&noscript=1" />
-    </noscript>
-    End Meta Pixel Code -->
-
-    <button id="contactButton">Contact</button>
-    <script type="text/javascript">
-        document.getElementById('contactButton').addEventListener('click', function () {
-            fbq('track', 'Contact');
-        });
-    </script>
-
 </head>
 
 <body>
@@ -428,7 +380,7 @@ layout: default
                         </div>
                         <a id="contactButton"
                             href="https://wa.me/4915222119734?text=Hi!%20Ich%20%2F%20mein%20Sohn%20%2F%20meine%20Tochter%20braucht%20Unterst%C3%BCtzung%20in%20Mathe%20f%C3%BCr%20die%20Klassenstufe%20___"
-                            class="cta-button">
+                            class="cta-button" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-whatsapp"></i> Gratis starten!
                         </a>
                     </section>
@@ -518,37 +470,66 @@ layout: default
         </footer>
     </div>
 
+    <!-- Add this script before the closing </body> tag -->
+
+    <!-- ... (rest of your HTML code) ... -->
+
+    <!-- Place this script just before the closing </body> tag -->
     <script>
-        // Function to send event to Facebook
-        function sendToFacebook(event, data) {
-            if (typeof fbq !== 'undefined') {
-                fbq('track', event, data);
+        async function sendFacebookPixelEvent() {
+            const pixelId = '1045222573957784'; // Your Facebook Pixel ID
+            const accessToken = 'EAAPRW01kkjgBO8tXNMnvPBcU9rtDW1OsqCV42ja2as6cESbZA3kX7KDX0ARX4WwqrswzBJzkjMftUutQKTWZCVjDtVdzSu8dyFVUyiO5ElDyp1fcZCaDWZAfdbsBZAHurzme63OOabUTHOpmFMn4Njew8PkGIQUwJkuq2PTR9EygkSIdbfDwLX2bEM0677fTtkAZDZD'; // Your Facebook Access Token
+            const facebookUrl = `https://graph.facebook.com/v12.0/${pixelId}/events?access_token=${accessToken}`;
+
+            const eventTime = Math.floor(Date.now() / 1000); // Get the current time in Unix timestamp
+            const userAgent = navigator.userAgent; // Get the client user agent
+            let clientIpAddress = null;
+
+            // Get the user's public IP address
+            try {
+                const ipResponse = await fetch('https://api.ipify.org?format=json');
+                const ipData = await ipResponse.json();
+                clientIpAddress = ipData.ip;
+            } catch (error) {
+                console.error("Error fetching IP address:", error);
             }
 
-            // Send event to Google Cloud Function for Conversions API
-            fetch('https://us-central1-chatwootbots.cloudfunctions.net/facebookEventFunction', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    event: event,
-                    data: data
-                }),
-            });
+            // Create the payload
+            const payload = {
+                data: [
+                    {
+                        event_name: "message",
+                        event_time: eventTime,
+                        action_source: "website",
+                        user_data: {
+                            client_ip_address: clientIpAddress,
+                            client_user_agent: userAgent
+                        }
+                    }
+                ]
+            };
+
+            try {
+                const response = await fetch(facebookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload),
+                    keepalive: true
+                });
+                const data = await response.json();
+                console.log("Success response from Facebook API:", data);
+            } catch (error) {
+                console.error("Error sending request:", error);
+            }
         }
 
-        // Add click event listener to the CTA button
-        document.querySelector('.cta-button').addEventListener('click', function (e) {
-            sendToFacebook('Contact', {
-                content_name: 'Mathe-Nachhilfe Anfrage',
-                content_category: 'Education',
-                value: 3.99,
-                currency: 'EUR'
-            });
+        // Attach the event listener to the WhatsApp button
+        document.getElementById('contactButton').addEventListener('click', function (e) {
+            // Call the function to send the Facebook Pixel event
+            sendFacebookPixelEvent();
+            // Proceed with the default action (opening WhatsApp)
         });
-
-        // Track PageView event
-        sendToFacebook('PageView', {});
     </script>
 </body>
