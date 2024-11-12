@@ -134,18 +134,50 @@
             height: 80px;
             padding: 10px 20px;
             margin-top: 10px;
-            background-color: #060c19;
+            background: linear-gradient(45deg,
+                    #2193b0,
+                    #6dd5ed,
+                    #2193b0);
+            background-size: 400%;
             color: white;
             border: none;
             border-radius: 5px;
             font-size: 18px;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            position: relative;
+            z-index: 0;
         }
 
-        .tutoringRequestButton:hover {
-            background-color: #0f1b36;
+        .tutoringRequestButton:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(45deg,
+                    #2193b0,
+                    #6dd5ed,
+                    #2193b0);
+            background-size: 400%;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: blur(5px);
+            animation: glowing 20s linear infinite;
+        }
+
+        @keyframes glowing {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
         }
     </style>
 
