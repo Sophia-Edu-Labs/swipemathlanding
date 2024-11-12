@@ -184,7 +184,7 @@
 
     <script>
         // Configuration
-        const TUTORING_FORM_URL = 'http://localhost:59918';
+        const TUTORING_FORM_URL = 'https://app.swipemath.com/register_only/';
 
         // Store the original URL to restore it later
         let originalURL = window.location.href;
@@ -230,7 +230,7 @@
 
         // Listen for messages from the iframe
         window.addEventListener('message', function (event) {
-            if (event.origin === TUTORING_FORM_URL) {
+            if (event.origin === new URL(TUTORING_FORM_URL).origin) {
                 if (event.data.type === 'registration_completed') {
                     closeOverlay();
                 }
