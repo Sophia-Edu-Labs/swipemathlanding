@@ -1,0 +1,557 @@
+<!-- ---
+layout: default
+--- -->
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-color: rgba(5, 12, 25, 0.8);
+            /* Reduced opacity */
+            --dark-color-solid: rgb(5, 12, 25);
+            /* 100% opacity version */
+            --accent-color: rgb(255, 75, 51);
+            --light-color: #ffffff;
+            --whatsapp-green: #25D366;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-color);
+            background-image: url('assets/headerimage.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        .landing-page {
+            position: relative;
+            color: var(--light-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(5, 12, 25, 0.7);
+            /* Semi-transparent overlay */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            padding-top: 20px;
+            /* Reduced from 40px */
+        }
+
+        .main-wrapper {
+            background: linear-gradient(to bottom,
+                    var(--dark-color-solid) 0%,
+                    rgba(15, 25, 40, 1) 50%,
+                    rgba(25, 35, 50, 1) 100%);
+            border-radius: 32px;
+            padding: 32px 64px;
+            box-shadow: 0 0 27px rgba(255, 75, 51, 0.03);
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: scale(0.85);
+        }
+
+        .hero {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 0;
+            /* Removed padding-top */
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            margin-bottom: 24px;
+            color: var(--accent-color);
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h2 span {
+            display: block;
+            font-size: 30px;
+            color: var(--light-color);
+            margin-bottom: 2px;
+            /* or 0px for no gap */
+        }
+
+        .hero-text {
+            max-width: 80%;
+            margin-top: 16px;
+            /* Reduced from 20px */
+        }
+
+        .hero-text .price {
+            display: inline;
+        }
+
+        .hero p {
+            font-size: 18px;
+            /* Reduced from 20px */
+            margin-bottom: 32px;
+            /* Reduced from 40px */
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--whatsapp-green);
+            color: var(--light-color);
+            padding: 16px 32px;
+            /* Reduced from 18px 36px */
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 20px;
+            /* Reduced from 22px */
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            /* Reduced from 60px */
+        }
+
+        .cta-button:hover {
+            background-color: #1eb645;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-button i {
+            margin-right: 10px;
+            font-size: 22px;
+            /* Reduced from 25px */
+        }
+
+        .feature-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 24px;
+            /* Reduced from 30px */
+            margin-top: 16px;
+            /* Reduced from 20px */
+        }
+
+        .feature {
+            text-align: center;
+            max-width: 160px;
+            padding: 12px;
+            margin: 8px;
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0.15) 0%,
+                    rgba(255, 255, 255, 0.1) 50%,
+                    rgba(255, 75, 51, 0.1) 100%);
+            border: 1px solid rgba(255, 75, 51, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 75, 51, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 140px;
+            /* Set a fixed height */
+        }
+
+        .feature:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(255, 75, 51, 0.3);
+        }
+
+        .feature i {
+            font-size: 32px;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+
+        .feature h3 {
+            margin-bottom: 1px;
+            /* or 0px for no gap */
+            color: var(--accent-color);
+            font-size: 15px;
+        }
+
+        .feature p {
+            font-size: 12px;
+            line-height: 1.3;
+            margin-bottom: 0;
+            /* Ensure no extra space at the bottom */
+            color: var(--light-color);
+            /* Ensure this is white */
+        }
+
+        .known-from {
+            position: relative;
+            padding: 24px 20px 16px;
+            /* Reduced from 30px 20px 18px */
+            background-color: var(--light-color);
+            overflow: visible;
+            margin-top: -24px;
+            /* Reduced from -30px */
+        }
+
+        .known-from-label {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--accent-color);
+            color: var(--light-color);
+            font-size: 16px;
+            /* Reduced from 18px */
+            font-weight: bold;
+            padding: 6px 16px;
+            /* Reduced from 8px 20px */
+            border-radius: 15px;
+            z-index: 99999;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .known-from-label span {
+            color: var(--light-color);
+        }
+
+        .known-from-slider {
+            display: flex;
+            width: 200%;
+            animation: scroll 10s linear infinite;
+        }
+
+        .known-from-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .known-from-item {
+            flex: 0 0 auto;
+            margin: 0 16px;
+            /* Reduced from 0 20px */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+        }
+
+        .known-from-item img {
+            height: 36px;
+            /* Reduced from 40px */
+            width: auto;
+            object-fit: contain;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .known-from-item:hover img {
+            opacity: 1;
+        }
+
+        .separator {
+            font-size: 20px;
+            /* Reduced from 24px */
+            color: var(--dark-color);
+            margin: 0 16px;
+            /* Reduced from 0 20px */
+            opacity: 0.7;
+        }
+
+        .whitespace {
+            width: 32px;
+            /* Reduced from 40px */
+            display: inline-block;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .landing-footer {
+            background-color: var(--dark-color);
+            /* Changed to match the body background */
+            color: var(--light-color);
+            text-align: center;
+            padding: 24px 0 12px;
+            /* Reduced from 30px 0 15px */
+        }
+
+        .landing-footer a {
+            color: var(--light-color);
+            text-decoration: none;
+        }
+
+        .landing-footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .feature-group {
+                display: none;
+                /* Hide the feature group on small screens */
+            }
+
+            .hero-text .full-text {
+                display: none;
+            }
+
+            .hero-text .price {
+                display: inline;
+                font-weight: bold;
+            }
+
+            .known-from {
+                padding: 30px 10px 18px;
+            }
+
+            .known-from-label {
+                width: 80%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1045222573957784'); // Replace with your Pixel ID
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" src="https://www.facebook.com/tr?id=1045222573957784&ev=PageView
+    &noscript=1" />
+    </noscript>
+
+</head>
+
+<body>
+    <div class="landing-page">
+        <main class="main-content">
+            <div class="container">
+                <div class="main-wrapper">
+                    <section class="hero">
+                        <h2>
+                            <span>Verbessere deine</span>
+                            Mathe-Noten in nur 2 Wochen
+                        </h2>
+                        <section class="feature-group">
+                            <div class="feature">
+                                <i class="fas fa-book"></i>
+                                <h3>Individueller Lernplan</h3>
+                                <p>Maßgeschneidert für optimalen Lernerfolg</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h3>Innovative Lern-App</h3>
+                                <p>Lernen wann und wo es am besten passt</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-chart-line"></i>
+                                <h3>Schnelle Fortschritte</h3>
+                                <p>Sichtbare Verbesserungen in kurzer Zeit</p>
+                            </div>
+                        </section>
+                        <div class="hero-text">
+                            <p>
+                                <span class="full-text">Professionelle Nachhilfe mit individuellem Lernplan und
+                                    innovativer Lern-App für</span>
+                                <span class="price">nur 3,99€/Woche</span>
+                            </p>
+                        </div>
+                        <a id="contactButton"
+                            href="https://wa.me/41772796255?text=Hi!%20Ich%20%2F%20mein%20Sohn%20%2F%20meine%20Tochter%20braucht%20Unterst%C3%BCtzung%20in%20Mathe%20f%C3%BCr%20die%20Klassenstufe%20___"
+                            class="cta-button">
+                            <i class="fab fa-whatsapp"></i> Gratis starten!
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <section class="known-from">
+            <div class="known-from-label"><span>Bekannt aus ...</span></div>
+            <div class="known-from-slider">
+                <div class="known-from-content">
+                    <!-- Logos -->
+                    <a href="https://www.ardmediathek.de/video/wdr-aktuell/wdr-aktuell-oder-07-05-2024-oder-21-45-uhr/wdr/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtZjUzNzI0OTUtMDU5Ny00OGU3LWJmZTAtMGViZmY3MGZhZGM0"
+                        class="known-from-item" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logos/ard.svg" alt="ARD">
+                    </a>
+                    <a href="https://www.merkur.de/lokales/garmisch-partenkirchen/mittenwald-ort29073/mit-dem-smartphone-mathe-verstehen-93100657.html"
+                        class="known-from-item" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logos/merkur.png" alt="Merkur">
+                    </a>
+                    <a href="https://www.tagesspiegel.de/berlin/swipemath-zwei-berliner-entwickeln-ein-tiktok-fur-den-mathe-unterricht-11580824.html"
+                        class="known-from-item" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logos/tagesspiegel.png" alt="Tagesspiegel">
+                    </a>
+                    <a href="https://rp-online.de/nrw/staedte/moenchengladbach/mathelernen-mit-ki-moenchengladbacher-entwickelt-lern-app_aid-111225891"
+                        class="known-from-item" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logos/rp.png" alt="Rheinische Post">
+                    </a>
+                    <a href="https://www.businessinsider.de/gruenderszene/business/tiktok-fuer-mathe-zwei-gruender-entwickeln-ki-lernapp-fuer-das-abi/"
+                        class="known-from-item" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logos/bi.png" alt="Business Insider">
+                    </a>
+                    <a href="https://www.ardmediathek.de/video/wdr-aktuell/wdr-aktuell-oder-07-05-2024-oder-21-45-uhr/wdr/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtZjUzNzI0OTUtMDU5Ny00OGU3LWJmZTAtMGViZmY3MGZhZGM0"
+                        class="known-from-item" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logos/wdr.jpg" alt="WDR">
+                    </a>
+                    <a href="https://www.rbb-online.de/abendschau/serien/-zelleberlin/bueffeln-fuer-die-mathepruefung-mit-ki.html"
+                        class="known-from-item" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logos/rbb.png" alt="RBB">
+                    </a>
+                    <span class="whitespace"></span>
+                    <span class="separator">+++++</span>
+                    <span class="whitespace"></span>
+                </div>
+                <!-- Duplizieren für nahtloses Scrollen -->
+                <div class="known-from-content">
+                    <!-- Logos -->
+                    <a href="https://www.ardmediathek.de/video/wdr-aktuell/wdr-aktuell-oder-07-05-2024-oder-21-45-uhr/wdr/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtZjUzNzI0OTUtMDU5Ny00OGU3LWJmZTAtMGViZmY3MGZhZGM0"
+                        class="known-from-item" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logos/ard.svg" alt="ARD">
+                    </a>
+                    <a href="https://www.merkur.de/lokales/garmisch-partenkirchen/mittenwald-ort29073/mit-dem-smartphone-mathe-verstehen-93100657.html"
+                        class="known-from-item" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logos/merkur.png" alt="Merkur">
+                    </a>
+                    <a href="https://www.tagesspiegel.de/berlin/swipemath-zwei-berliner-entwickeln-ein-tiktok-fur-den-mathe-unterricht-11580824.html"
+                        class="known-from-item" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logos/tagesspiegel.png" alt="Tagesspiegel">
+                    </a>
+                    <a href="https://rp-online.de/nrw/staedte/moenchengladbach/mathelernen-mit-ki-moenchengladbacher-entwickelt-lern-app_aid-111225891"
+                        class="known-from-item" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logos/rp.png" alt="Rheinische Post">
+                    </a>
+                    <a href="https://www.businessinsider.de/gruenderszene/business/tiktok-fuer-mathe-zwei-gruender-entwickeln-ki-lernapp-fuer-das-abi/"
+                        class="known-from-item" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logos/bi.png" alt="Business Insider">
+                    </a>
+                    <a href="https://www.ardmediathek.de/video/wdr-aktuell/wdr-aktuell-oder-07-05-2024-oder-21-45-uhr/wdr/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtZjUzNzI0OTUtMDU5Ny00OGU3LWJmZTAtMGViZmY3MGZhZGM0"
+                        class="known-from-item" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logos/wdr.jpg" alt="WDR">
+                    </a>
+                    <a href="https://www.rbb-online.de/abendschau/serien/-zelleberlin/bueffeln-fuer-die-mathepruefung-mit-ki.html"
+                        class="known-from-item" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logos/rbb.png" alt="RBB">
+                    </a>
+                    <span class="whitespace"></span>
+                    <span class="separator">+++++</span>
+                    <span class="whitespace"></span>
+                </div>
+            </div>
+        </section>
+
+        <footer class="landing-footer">
+            <div class="container">
+                <p>&copy; 2024 Sophia Edu Labs. <a href="https://www.sophiaedulabs.com/impressum">Impressum</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Add this script before the closing </body> tag -->
+
+    <!-- ... (rest of your HTML code) ... -->
+
+    <!-- Place this script just before the closing </body> tag -->
+    <script>
+        async function sendFacebookPixelEvent() {
+            const pixelId = '1045222573957784'; // Your Facebook Pixel ID
+            const accessToken = 'EAAPRW01kkjgBO8tXNMnvPBcU9rtDW1OsqCV42ja2as6cESbZA3kX7KDX0ARX4WwqrswzBJzkjMftUutQKTWZCVjDtVdzSu8dyFVUyiO5ElDyp1fcZCaDWZAfdbsBZAHurzme63OOabUTHOpmFMn4Njew8PkGIQUwJkuq2PTR9EygkSIdbfDwLX2bEM0677fTtkAZDZD'; // Your Facebook Access Token
+            const facebookUrl = `https://graph.facebook.com/v12.0/${pixelId}/events?access_token=${accessToken}`;
+
+            const eventTime = Math.floor(Date.now() / 1000); // Get the current time in Unix timestamp
+            const userAgent = navigator.userAgent; // Get the client user agent
+            let clientIpAddress = null;
+
+            // Get the user's public IP address
+            try {
+                const ipResponse = await fetch('https://api.ipify.org?format=json');
+                const ipData = await ipResponse.json();
+                clientIpAddress = ipData.ip;
+            } catch (error) {
+                console.error("Error fetching IP address:", error);
+            }
+
+            // Create the payload
+            const payload = {
+                data: [
+                    {
+                        event_name: "message",
+                        event_time: eventTime,
+                        action_source: "website",
+                        user_data: {
+                            client_ip_address: clientIpAddress,
+                            client_user_agent: userAgent
+                        }
+                    }
+                ]
+            };
+
+            try {
+                const response = await fetch(facebookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload),
+                    keepalive: true
+                });
+                const data = await response.json();
+                console.log("Success response from Facebook API:", data);
+            } catch (error) {
+                console.error("Error sending request:", error);
+            }
+        }
+
+        // Attach the event listener to the WhatsApp button
+        document.getElementById('contactButton').addEventListener('click', function (e) {
+            fbq('track', 'Contact');
+            // Call the function to send the Facebook Pixel event
+            sendFacebookPixelEvent();
+            // Proceed with the default action (opening WhatsApp)
+        });
+    </script>
+</body>

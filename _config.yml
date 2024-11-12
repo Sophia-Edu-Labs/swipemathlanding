@@ -128,7 +128,8 @@ social:
 
 # Set the Sass partials directory, as we're using @imports
 sass:
-  style: :compressed # You might prefer to minify using :compressed
+  sass_dir: _sass
+  style: compressed
 
 # Exclude these files from your production _site
 exclude:
@@ -163,3 +164,12 @@ page_gen:
     name_expr: record['urloverride'] || record['code'].upcase
     dir: 'redeem-code'
     debug: false
+
+# Site navigation
+nav:
+  - title: Home
+    url: /
+  - title: Math Tutoring
+    url: /landing
+
+encoding: utf-8
