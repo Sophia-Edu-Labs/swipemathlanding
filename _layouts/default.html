@@ -70,6 +70,7 @@
 
                 <!-- Add the iframe container -->
                 <div id="tutoringFormOverlay" class="overlay hidden">
+                    <div class="loader hidden"></div>
                     <iframe id="tutoringFormFrame" src="" allowfullscreen></iframe>
                 </div>
 
@@ -180,6 +181,51 @@
                 background-position: 0 0;
             }
         }
+
+        /* Loader styles */
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #FFF;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            position: absolute;
+            animation: rotation 1s linear infinite;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .loader-container {
+            width: 90%;
+            height: 90%;
+            background: #060c19;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #tutoringFormFrame.loading {
+            opacity: 0;
+        }
+
+        /* For mobile devices */
+        @media screen and (max-width: 768px) {
+            .loader-container {
+                width: 100%;
+                height: 90%;
+                border-radius: 0;
+            }
+        }
     </style>
 
     <script>
@@ -192,9 +238,20 @@
         function openTutoringForm() {
             const overlay = document.getElementById('tutoringFormOverlay');
             const iframe = document.getElementById('tutoringFormFrame');
-            iframe.src = TUTORING_FORM_URL;
+            const loader = overlay.querySelector('.loader');
+
             overlay.classList.remove('hidden');
+            loader.classList.remove('hidden');
+            iframe.classList.add('loading');
+
+            iframe.src = TUTORING_FORM_URL;
             document.body.classList.add('iframe-open');
+
+            // Handle iframe load completion
+            iframe.onload = function () {
+                loader.classList.add('hidden');
+                iframe.classList.remove('loading');
+            };
 
             // Update URL with query parameter
             const newURL = new URL(window.location.href);
