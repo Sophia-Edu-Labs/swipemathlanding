@@ -55,6 +55,8 @@
                             {{ site.app_description[site.active_lang] }}
                         </p>
                     </div>
+                    <!-- a Button that opens the tutoring request form -->
+                    <button class="tutoringRequestButton" onclick="openTutoringForm()">Request Tutoring</button>
                     <div class="downloadButtonsContainer">
                         {% if site.playstore_link %}
                         <a class="playStoreLink" href="{{site.playstore_link}}"><img class="playStore"
@@ -64,12 +66,157 @@
                                 src="assets/appstore.png"></a>
                     </div>
                 </div>
+
+                <!-- Add the iframe container -->
+                <div id="tutoringFormOverlay" class="overlay hidden">
+                    <iframe id="tutoringFormFrame" src="" allowfullscreen></iframe>
+                </div>
+
                 {% include features.html %}
                 {% include footer.html %}
                 {% include appstoreimages.html %}
             </div>
         </div>
     </div>
+
+    <!-- Add before closing body tag -->
+    <style>
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #tutoringFormFrame {
+            width: 90%;
+            height: 90%;
+            border: none;
+            background: white;
+            border-radius: 8px;
+        }
+
+        /* Prevent background scrolling when overlay is open */
+        body.iframe-open {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+        }
+
+        /* For mobile devices */
+        @media screen and (max-width: 768px) {
+            .overlay {
+                padding: 20px 0;
+            }
+
+            #tutoringFormFrame {
+                width: 100%;
+                height: 90%;
+                border-radius: 0;
+            }
+        }
+
+        .tutoringRequestButton {
+            width: 100%;
+            min-width: 235px;
+            max-width: 482px;
+            height: 80px;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #060c19;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .tutoringRequestButton:hover {
+            background-color: #0f1b36;
+        }
+    </style>
+
+    <script>
+        // Configuration
+        const TUTORING_FORM_URL = 'http://localhost:59918';
+
+        // Store the original URL to restore it later
+        let originalURL = window.location.href;
+
+        function openTutoringForm() {
+            const overlay = document.getElementById('tutoringFormOverlay');
+            const iframe = document.getElementById('tutoringFormFrame');
+            iframe.src = TUTORING_FORM_URL;
+            overlay.classList.remove('hidden');
+            document.body.classList.add('iframe-open');
+
+            // Update URL with query parameter
+            const newURL = new URL(window.location.href);
+            newURL.searchParams.set('modal', 'tutoring-request');
+            window.history.pushState({}, '', newURL.toString());
+        }
+
+        function closeOverlay() {
+            document.getElementById('tutoringFormOverlay').classList.add('hidden');
+            document.body.classList.remove('iframe-open');
+
+            // Remove query parameter when closing
+            const newURL = new URL(originalURL);
+            newURL.searchParams.delete('modal');
+            window.history.pushState({}, '', newURL.toString());
+        }
+
+        // Handle browser back button
+        window.addEventListener('popstate', function () {
+            if (!document.getElementById('tutoringFormOverlay').classList.contains('hidden')) {
+                closeOverlay();
+            }
+        });
+
+        // Close overlay when clicking outside the iframe
+        document.getElementById('tutoringFormOverlay').addEventListener('click', function (e) {
+            if (e.target === this || e.target.classList.contains('overlay')) {
+                closeOverlay();
+                // Prevent default to avoid double URL changes
+                e.preventDefault();
+            }
+        });
+
+        // Listen for messages from the iframe
+        window.addEventListener('message', function (event) {
+            if (event.origin === TUTORING_FORM_URL) {
+                if (event.data.type === 'registration_completed') {
+                    closeOverlay();
+                }
+            }
+        });
+
+        // Check URL on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('modal') === 'tutoring-request') {
+                // Store the current URL without the modal parameter
+                const currentURL = new URL(window.location.href);
+                currentURL.searchParams.delete('modal');
+                originalURL = currentURL.toString();
+
+                openTutoringForm();
+            }
+        });
+    </script>
 </body>
 
 </html>
