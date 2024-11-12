@@ -20,6 +20,10 @@ app_description:
   en: Learning math? Swipe 15 minutes every day & Let the AI do the rest
   de: Mathe lernen? Swipe jeden Tag 15 Minuten & lass die KI den Rest machen
 
+tutoring_button:
+  en: Request Tutoring
+  de: Nachhilfe anfragen
+
 enable_smart_app_banner                   : true                                      # Set to true to show a smart app banner at top of page on mobile devices.
 
 

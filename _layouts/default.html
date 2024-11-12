@@ -56,7 +56,8 @@
                         </p>
                     </div>
                     <!-- a Button that opens the tutoring request form -->
-                    <button class="tutoringRequestButton" onclick="openTutoringForm()">Request Tutoring</button>
+                    <button class="tutoringRequestButton" onclick="openTutoringForm()">{{
+                        site.tutoring_button[site.active_lang] }}</button>
                     <div class="downloadButtonsContainer">
                         {% if site.playstore_link %}
                         <a class="playStoreLink" href="{{site.playstore_link}}"><img class="playStore"
